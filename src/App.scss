@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: silver;
+    font-family: 'Abel';
+}
+body {
+      background-color: rgb(5, 1, 10)
+  }
+  header {
+    font-size: 56px;
+    text-align: center
+  }
+
+  figure {
+    display: flex;
+    justify-content: center;
+    max-width: 98vw;
+    margin-bottom: 24px;
+  }
+  main {
+    @extend figure;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+  section {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+  }
+  summary {
+    box-shadow: 2px 2px 2px 2px silver;
+    padding: 20px;
+  }
+  aside {
+    @extend summary;
+    padding-left: 40px;
+}
+form {
+    font-size: 20px;
+    @extend aside
+  }
+  
+  li {
+      list-style: none
+  }
+  %parameters {
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  button {
+    @extend %parameters;
+    margin: 5px;
+    padding: 2px;
+  }
+  input {
+    @extend %parameters;
+    background-color: silver ;
+    margin-left: 7px;
+  }
+  button[type="submit"] {
+    margin-left: 75px;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .days-r, .days {
+    display: flex; 
+    flex-direction: row;
+    padding-top: 7px;
+    justify-content: space-evenly;
+     p {
+        color: red
+     }
+}
+    .days {
+        @extend .days-r; 
+        p {
+            color: green
+        }
+    }
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  
