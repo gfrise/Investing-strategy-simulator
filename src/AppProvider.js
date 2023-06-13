@@ -6,7 +6,8 @@ function AppProvider({children}) {
 
     const [info, setInfo] = React.useState({
         mese: aprile,
-        valori: [0, 0, 0, 0, 0, 0, 0, 0]
+        valori: [0, 0, 0, 0, 0, 0, 0, 0],
+        algoritmo: false
     })
     
     function updateMese(newData) {
@@ -23,10 +24,18 @@ function AppProvider({children}) {
         }))
     }
 
+    function updateBool(newBool) {
+        setInfo((prev) => ({
+            ...prev,
+            algoritmo: newBool
+        }))
+    }
+
     const contextValue = {
         state: info,
         updateMese, 
-        updateValori
+        updateValori,
+        updateBool
     }
 
     return (

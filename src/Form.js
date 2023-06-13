@@ -5,7 +5,7 @@ import AppContext from './AppContext'
 import { randomizeInputs, options, monthOptions } from './Abstractions'
 
 export function Form() {
-    const {state, updateValori, updateMese} = React.useContext(AppContext)
+    const {state, updateValori, updateMese, updateBool} = React.useContext(AppContext)
 
     const [soldiIniziali, setsoldiIniziali] = useState(0)
     const [firstBuyVar, setfirstBuyVar] = useState(0)
@@ -18,6 +18,8 @@ export function Form() {
 
     const [selected, setSelected] = useState(options[0].value)
 
+    const [bool, setBool] = useState(state.algoritmo)
+
     function exportMonth(number) {
         return monthOptions[number];
     }
@@ -26,6 +28,7 @@ export function Form() {
 
         function passProps(event) {
             event.preventDefault()
+            updateBool(false)
             updateValori([
                 Number(soldiIniziali),
                 Number(firstBuyVar), Number(primoInvestimento),
@@ -38,6 +41,7 @@ export function Form() {
 
         function passRandomProps(event) {
             event.preventDefault()
+            updateBool(false)
             let primo = randomizeInputs(0.15, 1)
             let second = randomizeInputs(0, (1 - primo))
             let aiuto = second + primo
@@ -50,6 +54,34 @@ export function Form() {
                 Number(randomizeInputs(-4, 0)), Number(third),
             ])
         updateMese(pricesTable)
+        }
+
+        function handleAlgoritmo(e) {
+            e.preventDefault()
+            updateMese(pricesTable)
+            setBool((prev) => !prev)
+            updateBool(bool)
+            if (bool) {
+                let primo = randomizeInputs(0.15, 1)
+                let second = randomizeInputs(0, (1 - primo))
+                let aiuto = second + primo
+                let third = randomizeInputs(0, 1 - aiuto)
+                updateValori([
+                    Number(randomizeInputs(900, 15000)),
+                    Number(randomizeInputs(-3, -0.6)), Number(primo),
+                    Number(randomizeInputs(0.1, 5)),
+                    Number(randomizeInputs(-4, 0)), Number(second),
+                    Number(randomizeInputs(-4, 0)), Number(third),
+                ])
+            } else {
+                updateValori([
+                    Number(0),
+                    Number(0), Number(0),
+                    Number(0),
+                    Number(0), Number(0),
+                    Number(0), Number(0),
+                ])
+            }
         }
     
     return (
@@ -98,7 +130,8 @@ export function Form() {
             </select>
                 <br/>
             <button onClick={passRandomProps}>Strategia Random</button>
-            <button disabled>Algoritmo Genetico</button> 
+            {bool && <button onClick={handleAlgoritmo}>Avvia Algoritmo</button>} 
+            {!bool && <button onClick={handleAlgoritmo}>Leva algoritmo</button>} 
                 <br/>
                 <button type="submit">AVVIA</button>
             </form>

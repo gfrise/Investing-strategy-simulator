@@ -20,3 +20,5 @@ function App() {
 }
 
 export default App;
+
+//rifarla in typescript, media quoery, grafica, backend?
