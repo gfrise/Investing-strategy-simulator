@@ -37,7 +37,7 @@ export function mutateArray(x) {
 
 function createMonth(Initial_price = 10) {
     let primo_prezzo = Initial_price
-    function randomize(small, big) { // (small: number, big: number) 
+    function randomize(small, big) { 
         return Math.random() * (big - small) + small
     }
     const prices = [];

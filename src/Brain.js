@@ -119,7 +119,7 @@ export function algoritmoGenetico(gen, state, boolean) {
     results.push(parentResult)
     
     let i = 0
-    while (i < 900) {
+    while (i < 90) {
         const newParams = mutateArray(state.valori) 
         const newState = {
             ...state,

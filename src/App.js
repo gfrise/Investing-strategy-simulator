@@ -1,6 +1,6 @@
 import Graph from "./LineChart";
-import { Simulazione } from "./simulatio";
 import AppProvider from "./AppProvider";
+import { Simulazione } from "./simulatio";
 import { Form } from "./Form";
 import "./App.scss"
 
@@ -21,4 +21,4 @@ function App() {
 
 export default App;
 
-//rifarla in typescript, media quoery, grafica, backend?
+//media quoery, grafica, backend?

@@ -6,7 +6,7 @@ export function Simulazione() {
     const {state} = React.useContext(AppContext)
     const boolean = state.algoritmo
 
-    const x = !boolean ? simulateInv(state, boolean) : algoritmoGenetico(300, state, boolean);
+    const x = !boolean ? simulateInv(state, boolean) : algoritmoGenetico(700, state, boolean);
 
     function round(num) {
         return Math.round(num * 100) / 100;

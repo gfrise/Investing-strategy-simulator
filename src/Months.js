@@ -1,10 +1,3 @@
-// interface PriceData {
-//   date: string;
-//   variation: number;
-//   price: number;
-// }
-// export const gennaio: PriceData[] = [
-
 export const december_2021 = [
     { price: 387.12, variation: -1.7, date: "01/12" },
     { price: 389.91, variation: 0.72, date: "02/12" },

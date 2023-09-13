@@ -11,17 +11,3 @@ export function SpecificInput({firstvalue, secondvalue, firstonChange, secondonC
         </>
     )
 }
-
-// interface SpecificInputProps {
-//     firstvalue: number;
-//     secondvalue: number;
-//     firstonChange: (event: ChangeEvent<HTMLInputElement>) => void;
-//     secondonChange: (event: ChangeEvent<HTMLInputElement>) => void;
-//   }
-//   export function SpecificInput({
-//     firstvalue,
-//     secondvalue,
-//     firstonChange,
-//     secondonChange,
-//   }: SpecificInputProps) 
-// import React, { ChangeEvent } from "react";

@@ -1,21 +1,6 @@
 import React from 'react'
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend
-} from "recharts";
+import {LineChart,Line,XAxis,YAxis,CartesianGrid,Tooltip,Legend} from "recharts";
 import AppContext from './AppContext';
-
-// interface GraphProps {
-//   mese: PriceData[];
-// }
-
-// export default function Graph({ mese }: GraphProps) {
-
 
 export default function Graph() {
     const {state} = React.useContext(AppContext)
@@ -23,7 +8,7 @@ export default function Graph() {
     
     return (
         <figure>
-    <LineChart
+        <LineChart
             width={1000}
             height={300}
             data={pricesTable}
@@ -47,7 +32,7 @@ export default function Graph() {
             />
             <Line 
               type="monotone" 
-              dataKey="variation" // or strategy
+              dataKey="variation"
               stroke="#82ca9d" />
           </LineChart>
           </figure>

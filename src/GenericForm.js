@@ -15,13 +15,3 @@ export function GenericInput({label, min, max, value, onChange}) {
         </div>
     )
 }
-
-// { ChangeEvent } from "react";
-
-// interface GenericInputProps {
-//   label: string;
-//   min: number;
-//   max: number;
-//   value: number;
-//   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-// }
